@@ -12,7 +12,25 @@
 
     <groupId>za.ac.nwu.as</groupId>
     <artifactId>AccountSystemLogic</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>jar</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>za.ac.nwu.as</groupId>
+            <artifactId>AccountSystemDomain</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>za.ac.nwu.as</groupId>
+            <artifactId>AccountSystemTranslator</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
     
 </project>
