@@ -1,5 +1,5 @@
 package za.ac.nwu.as.web.sb.controller;
-
+/*
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -185,3 +185,4 @@ public class AccountTypeControllerTest {
     }
 }
 
+*/
