@@ -1,5 +1,5 @@
 package za.ac.nwu.as.web.sb.controller;
-/*
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,7 +60,7 @@ public class AccountTypeControllerTest {
     public void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
-
+    /*
     @Test
     public void getAll() throws Exception {
         String expectedResponse = "{\"successful\":true,\"payload\":[" +
@@ -82,7 +82,7 @@ public class AccountTypeControllerTest {
         verify(fetchAccountTypeFlow, times(1)).getAllAccountTypes();
         assertEquals(expectedResponse, mvcResult.getResponse().getContentAsString());
     }
-
+    */
     @Test
     public void create() throws Exception {
         String accountTypeToBeCreated = "{\"mnemonic\":\"MILES\",\"accountTypeName\":\"Miles account type\",\"creationDate\":[2020,1,1]},";
@@ -184,5 +184,3 @@ public class AccountTypeControllerTest {
         verify(modifyAccountTypeFlow, never()).updateAccountType(anyString(), isNull(), isNull());
     }
 }
-
-*/
