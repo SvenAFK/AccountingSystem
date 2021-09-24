@@ -11,4 +11,3 @@ public class RestServiceApplication {
     }
 }
 //http://localhost:8090/account-system/mvc/swagger-ui.html#
-//NB Error running 'AccountSystem [clean,install]':

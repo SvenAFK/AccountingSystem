@@ -17,8 +17,6 @@ import za.ac.nwu.as.logic.flow.CreateAccountTypeFlow;
 import za.ac.nwu.as.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.as.logic.flow.ModifyAccountTypeFlow;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.AdditionalAnswers.returnsFirstArg;
 import static org.mockito.ArgumentMatchers.any;

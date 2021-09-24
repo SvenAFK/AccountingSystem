@@ -1,21 +1,26 @@
 package za.ac.nwu.as.domain.persistence;
 
+import za.ac.nwu.as.domain.dto.AccountTransactionDetailsDto;
+import za.ac.nwu.as.domain.dto.AccountTypeDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ACCOUNT_TRANSAX", schema = "SVEN")
+@Table(name = "ACCOUNT_TX", schema = "C##HEINKE")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = 4929393590271758415L;
 
     private Long transactionId;
-    private AccountType accountType;
+    private AccountType accountType; // Foreign key, reference AccountType
     private Long memberId;
     private Long amount;
     private LocalDate transactionDate;
+
+    private AccountTransactionDetails details;
 
     public AccountTransaction() {
     }
@@ -31,11 +36,12 @@ public class AccountTransaction implements Serializable {
     @Id
     @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
-    @Column(name = "TRANSAX_ID")
+    @Column(name = "ACCOUNT_TX_ID")
     public Long getTransactionId() {
         return transactionId;
     }
 
+    //@ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "MEMBER_ID")
     public Long getMemberId() {
         return memberId;
@@ -46,7 +52,7 @@ public class AccountTransaction implements Serializable {
         return amount;
     }
 
-    @Column(name = "TRANSAX_DATE")
+    @Column(name = "TX_DATE")
     public LocalDate getTransactionDate() {
         return transactionDate;
     }
@@ -55,6 +61,11 @@ public class AccountTransaction implements Serializable {
     @JoinColumn(name = "ACCOUNT_TYPE_ID")
     public AccountType getAccountType() {
         return accountType;
+    }
+
+    @OneToOne(targetEntity = AccountTransactionDetails.class, fetch = FetchType.LAZY, mappedBy = "accountTransaction", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    public AccountTransactionDetails getDetails() {
+        return details;
     }
 
     public void setTransactionId(Long transactionId) {
@@ -75,6 +86,10 @@ public class AccountTransaction implements Serializable {
 
     public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
+    }
+
+    public void setDetails(AccountTransactionDetails details) {
+        this.details = details;
     }
 
     @Override

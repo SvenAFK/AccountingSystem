@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "SVEN")
+@Table(name = "ACCOUNT_TYPE", schema = "C##HEINKE")
 
 public class AccountType implements Serializable {
 
@@ -60,7 +60,7 @@ public class AccountType implements Serializable {
         return creationDate;
     }
 
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType"/*, orphanRemoval = true, cascade = CascadeType.PERSIST*/)
     public Set<AccountTransaction> getAccountTransactions() {
         return accountTransactions;
     }
@@ -107,4 +107,3 @@ public class AccountType implements Serializable {
                 '}';
     }
 }
-
