@@ -6,22 +6,20 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ACCOUNT_HOLDER", schema = "C##HEINKE")
+@Table(name = "ACCOUNT_HOLDER", schema = "SVEN")
 public class AccountHolder implements Serializable {
 
     private static final long serialVersionUID = -6020840492390503972L;
-    private Long memberId;
+    private int memberId;
     private String memberName;
-    private Long balance;
+    private int balance;
     private String currency;
     private LocalDate startDate;
-
-    //private Set<AccountTransaction> accountTransactions;
 
     public AccountHolder() {
     }
 
-    public AccountHolder(Long memberId, String memberName, Long balance, String currency, LocalDate startDate) {
+    public AccountHolder(int memberId, String memberName, int balance, String currency, LocalDate startDate) {
         this.memberId = memberId;
         this.memberName = memberName;
         this.balance = balance;
@@ -29,7 +27,7 @@ public class AccountHolder implements Serializable {
         this.startDate = startDate;
     }
 
-    public AccountHolder(String memberName, Long balance, String currency, LocalDate startDate) {
+    public AccountHolder(String memberName, int balance, String currency, LocalDate startDate) {
         this.memberName = memberName;
         this.balance = balance;
         this.currency = currency;
@@ -37,11 +35,11 @@ public class AccountHolder implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "SYSTEM.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
 
     @Column(name = "MEMBER_ID")
-    public Long getMemberId() {
+    public int getMemberId() {
         return memberId;
     }
 
@@ -51,7 +49,7 @@ public class AccountHolder implements Serializable {
     }
 
     @Column(name = "BALANCE")
-    public Long getBalance() {
+    public int getBalance() {
         return balance;
     }
 
@@ -65,12 +63,7 @@ public class AccountHolder implements Serializable {
         return startDate;
     }
 
-    //@OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "memberId", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    /*public Set<AccountTransaction> getAccountTransactions() {
-        return accountTransactions;
-    }*/
-
-    public void setMemberId(Long memberId) {
+    public void setMemberId(int memberId) {
         this.memberId = memberId;
     }
 
@@ -78,7 +71,7 @@ public class AccountHolder implements Serializable {
         this.memberName = memberName;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 
@@ -90,10 +83,6 @@ public class AccountHolder implements Serializable {
         this.startDate = startDate;
     }
 
-    /*public void setAccountTransactions(Set<AccountTransaction> accountTransactions) {
-        this.accountTransactions = accountTransactions;
-    }*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -104,7 +93,7 @@ public class AccountHolder implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberId, memberName, balance, currency, startDate/*, accountTransactions*/);
+        return Objects.hash(memberId, memberName, balance, currency, startDate);
     }
 
     @Override
@@ -115,7 +104,7 @@ public class AccountHolder implements Serializable {
                 ", balance=" + balance +
                 ", currency='" + currency + '\'' +
                 ", startDate=" + startDate +
-                ", accountTransactions=" + /*accountTransactions +*/
+                ", accountTransactions=" +
                 '}';
     }
 }

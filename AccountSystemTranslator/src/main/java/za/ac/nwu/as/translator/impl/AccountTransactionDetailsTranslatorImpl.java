@@ -19,7 +19,7 @@ public class AccountTransactionDetailsTranslatorImpl implements AccountTransacti
         try {
             return repo.save(accountTransactionDetails);
         } catch (Exception e) {
-            throw new RuntimeException("Unable to save to the DB", e);
+            throw new RuntimeException("Unable to save to the Database", e);
         }
     }
 }

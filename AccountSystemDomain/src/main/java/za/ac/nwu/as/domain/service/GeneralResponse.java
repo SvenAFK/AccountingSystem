@@ -18,6 +18,7 @@ public class GeneralResponse<T> implements Serializable {
 
     public T getPayload() {return payload;}
 
+    @Override
     public boolean equals(Object o){
         if (this ==o) return true;
         if (o == null || getClass() != o.getClass()) return false;

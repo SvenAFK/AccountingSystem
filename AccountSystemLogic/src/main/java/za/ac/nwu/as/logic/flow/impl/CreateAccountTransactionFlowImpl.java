@@ -11,6 +11,7 @@ import za.ac.nwu.as.logic.flow.CreateAccountTransactionFlow;
 import za.ac.nwu.as.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.as.translator.AccountTransactionDetailsTranslator;
 import za.ac.nwu.as.translator.AccountTransactionTranslator;
+
 import javax.transaction.Transactional;
 
 @Transactional
@@ -36,18 +37,20 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
 
         if(LOGGER.isInfoEnabled()) {
             String outputForLogging = "null";
-            if((null != accountTransactionDto) && (null != accountTransactionDto.getDetails())){
+            if ((null != accountTransactionDto) && (null != accountTransactionDto.getDetails())) {
                 outputForLogging = accountTransactionDto.getDetails().toString();
             }
-            LOGGER.info("The input object was {} and the Details is {} ", accountTransactionDto,outputForLogging);
-
+            LOGGER.info("The input is {} and the Details is {}", accountTransactionDto, outputForLogging);
         }
-        accountTransactionDto.setTransactionId(null);
+        //LOGGER.warn("The input was {}", accountTransactionDto);
+
+        accountTransactionDto.setTransactionId(429514);
 
         AccountType accountType = fetchAccountTypeFlow.getAccountTypeDbEntityByMnemonic(accountTransactionDto.getAccountTypeMnemonic());
-       /* LOGGER.info("Got AccountType for {} and the AccountTypeId is {}", accountTransactionDto.getAccountTypeMnemonic(), accountType.getAccountTypeId());
-        */
-        LOGGER.info("Got AccountType for {} and the AccountTypeId is {}", accountTransactionDto.getAccountTypeMnemonic(), accountType.getAccountTypeId());
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Got AccountType for {} and the AccountTypeId is {}", accountTransactionDto.getAccountTypeMnemonic(), accountType.getAccountTypeId());
+        }
+
         AccountTransaction accountTransaction = accountTransactionDto.buildAccountTransaction(accountType);
 
         AccountTransaction createdAccountTransaction = accountTransactionTranslator.save(accountTransaction);
@@ -57,7 +60,8 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
             accountTransactionDetailsTranslator.save(accountTransactionDetails);
         }
         AccountTransactionDto results = new AccountTransactionDto(createdAccountTransaction);
-        LOGGER.info("The return object is {}", results);
+        //LOGGER.info("The return object is {}", results);
+        LOGGER.warn("The return object is {}", results);
         return results;
     }
 }

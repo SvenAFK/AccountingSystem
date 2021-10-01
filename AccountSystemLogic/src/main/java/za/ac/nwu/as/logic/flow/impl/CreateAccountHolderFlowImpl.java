@@ -23,7 +23,7 @@ public class CreateAccountHolderFlowImpl implements CreateAccountHolderFlow {
         if (null == accountHolder.getStartDate()){
             accountHolder.setStartDate(LocalDate.now());
         }
-        accountHolderTranslator.create(accountHolder);
+        //accountHolderTranslator.create(accountHolder);
         return accountHolderTranslator.create(accountHolder);
     }
 }

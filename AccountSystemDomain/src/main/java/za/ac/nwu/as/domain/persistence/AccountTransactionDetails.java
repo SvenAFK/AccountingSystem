@@ -5,21 +5,21 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "ACCOUNT_TX_DETAILS", schema = "C##HEINKE")
+@Table(name = "ACCOUNT_TX_DETAILS", schema = "SVEN")
 public class AccountTransactionDetails implements Serializable {
 
     private static final long serialVersionUID = -6267449281814297055L;
 
-    Long AccountTransactionDetailsId;
+    int AccountTransactionDetailsId;
     AccountTransaction accountTransaction;
     String partnerName;
-    Long numberOfItems;
+    int numberOfItems;
 
     @Id
-    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "SYSTEM.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
     @Column(name = "ACCOUNT_TX_DETAILS_ID")
-    public Long getAccountTransactionDetailsId() {
+    public int getAccountTransactionDetailsId() {
         return AccountTransactionDetailsId;
     }
 
@@ -35,25 +35,25 @@ public class AccountTransactionDetails implements Serializable {
     }
 
     @Column(name = "NUMBER_OF_ITEMS")
-    public Long getNumberOfItems() {
+    public int getNumberOfItems() {
         return numberOfItems;
     }
 
     public AccountTransactionDetails() {
     }
 
-    public AccountTransactionDetails(AccountTransaction accountTransaction, String partnerName, Long numberOfItems) {
+    public AccountTransactionDetails(AccountTransaction accountTransaction, String partnerName, int numberOfItems) {
         this.accountTransaction = accountTransaction;
         this.partnerName = partnerName;
         this.numberOfItems = numberOfItems;
     }
 
-    public AccountTransactionDetails(String partnerName, Long numberOfItems) {
+    public AccountTransactionDetails(String partnerName, int numberOfItems) {
         this.partnerName = partnerName;
         this.numberOfItems = numberOfItems;
     }
 
-    public void setAccountTransactionDetailsId(Long accountTransactionDetailsId) {
+    public void setAccountTransactionDetailsId(int accountTransactionDetailsId) {
         AccountTransactionDetailsId = accountTransactionDetailsId;
     }
 
@@ -65,7 +65,7 @@ public class AccountTransactionDetails implements Serializable {
         this.partnerName = partnerName;
     }
 
-    public void setNumberOfItems(Long numberOfItems) {
+    public void setNumberOfItems(int numberOfItems) {
         this.numberOfItems = numberOfItems;
     }
 

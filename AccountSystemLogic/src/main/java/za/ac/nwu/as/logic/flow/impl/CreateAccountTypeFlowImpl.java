@@ -23,7 +23,7 @@ public class CreateAccountTypeFlowImpl implements CreateAccountTypeFlow {
         if (null == accountType.getCreationDate()){
             accountType.setCreationDate(LocalDate.now());
         }
-        accountTranslator.create(accountType);
+        //accountTranslator.create(accountType);
         return accountTranslator.create(accountType);
     }
 }

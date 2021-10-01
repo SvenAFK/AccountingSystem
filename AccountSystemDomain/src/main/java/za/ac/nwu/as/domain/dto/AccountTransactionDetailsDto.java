@@ -9,12 +9,12 @@ import java.util.Objects;
 public class AccountTransactionDetailsDto {
 
     String partnerName;
-    Long numberOfItems;
+    Integer numberOfItems;
 
     public AccountTransactionDetailsDto() {
     }
 
-    public AccountTransactionDetailsDto(String partnerName, Long numberOfItems) {
+    public AccountTransactionDetailsDto(String partnerName, int numberOfItems) {
         this.partnerName = partnerName;
         this.numberOfItems = numberOfItems;
     }
@@ -42,11 +42,11 @@ public class AccountTransactionDetailsDto {
         this.partnerName = partnerName;
     }
 
-    public Long getNumberOfItems() {
+    public int getNumberOfItems() {
         return numberOfItems;
     }
 
-    public void setNumberOfItems(Long numberOfItems) {
+    public void setNumberOfItems(int numberOfItems) {
         this.numberOfItems = numberOfItems;
     }
 

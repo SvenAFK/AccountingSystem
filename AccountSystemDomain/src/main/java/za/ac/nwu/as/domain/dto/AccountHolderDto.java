@@ -15,14 +15,14 @@ public class AccountHolderDto implements Serializable {
 
     private static final long serialVersionUID = -5566983671858386439L;
     private String memberName;
-    private Long balance;
+    private Integer balance;
     private String currency;
     private LocalDate startDate;
 
     public AccountHolderDto() {
     }
 
-    public AccountHolderDto(String memberName, Long balance, String currency, LocalDate startDate) {
+    public AccountHolderDto(String memberName, int balance, String currency, LocalDate startDate) {
         this.memberName = memberName;
         this.balance = balance;
         this.currency = currency;
@@ -56,15 +56,15 @@ public class AccountHolderDto implements Serializable {
             value = "AccountHolder Balance",
             name = "Balance",
             notes = "The balance of the AccountHolder",
-            dataType = "java.lang.Long",
+            dataType = "java.lang.Integer",
             example = "5000",
             required = true)
 
-    public Long getBalance() {
+    public int getBalance() {
         return balance;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 
@@ -88,7 +88,7 @@ public class AccountHolderDto implements Serializable {
             value = "AccountHolder Start Date",
             name = "StartDate",
             notes = "This is the start date on which to add Miles/Currency for a member",
-            dataType = "java.lang.String",
+            dataType = "java.time.LocalDate",
             example = "2020-01-01",
             allowEmptyValue = true)
 

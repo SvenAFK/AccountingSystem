@@ -9,15 +9,15 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ACCOUNT_TX", schema = "C##HEINKE")
+@Table(name = "ACCOUNT_TX", schema = "SVEN")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = 4929393590271758415L;
 
-    private Long transactionId;
-    private AccountType accountType; // Foreign key, reference AccountType
-    private Long memberId;
-    private Long amount;
+    private int transactionId;
+    private AccountType accountType;
+    private int memberId;
+    private int amount;
     private LocalDate transactionDate;
 
     private AccountTransactionDetails details;
@@ -25,7 +25,7 @@ public class AccountTransaction implements Serializable {
     public AccountTransaction() {
     }
 
-    public AccountTransaction(Long transactionId, AccountType accountType, Long memberId, Long amount, LocalDate transactionDate) {
+    public AccountTransaction(int transactionId, AccountType accountType, int memberId, int amount, LocalDate transactionDate) {
         this.transactionId = transactionId;
         this.accountType = accountType;
         this.memberId = memberId;
@@ -34,21 +34,21 @@ public class AccountTransaction implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "SYSTEM.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
     @Column(name = "ACCOUNT_TX_ID")
-    public Long getTransactionId() {
+    public int getTransactionId() {
         return transactionId;
     }
 
     //@ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "MEMBER_ID")
-    public Long getMemberId() {
+    public int getMemberId() {
         return memberId;
     }
 
     @Column(name = "AMOUNT")
-    public Long getAmount() {
+    public int getAmount() {
         return amount;
     }
 
@@ -68,7 +68,7 @@ public class AccountTransaction implements Serializable {
         return details;
     }
 
-    public void setTransactionId(Long transactionId) {
+    public void setTransactionId(int transactionId) {
         this.transactionId = transactionId;
     }
 
@@ -76,11 +76,11 @@ public class AccountTransaction implements Serializable {
         this.accountType = accountType;
     }
 
-    public void setMemberId(Long memberId) {
+    public void setMemberId(int memberId) {
         this.memberId = memberId;
     }
 
-    public void setAmount(Long amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

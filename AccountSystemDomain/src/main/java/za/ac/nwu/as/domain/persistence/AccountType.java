@@ -1,5 +1,7 @@
 package za.ac.nwu.as.domain.persistence;
 
+import za.ac.nwu.as.domain.dto.AccountHolderDto;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -7,13 +9,13 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "C##HEINKE")
+@Table(name = "ACCOUNT_TYPE", schema = "SVEN")
 
 public class AccountType implements Serializable {
 
     private static final long serialVersionUID = -6487849047972936568L;
 
-    private Long accountTypeId;
+    private int accountTypeId;
     private String mnemonic;
     private String accountTypeName;
     private LocalDate creationDate;
@@ -23,7 +25,7 @@ public class AccountType implements Serializable {
     public AccountType() {
     }
 
-    public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate) {
+    public AccountType(int accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate) {
         this.accountTypeId = accountTypeId;
         this.mnemonic = mnemonic;
         this.accountTypeName = accountTypeName;
@@ -37,11 +39,11 @@ public class AccountType implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "HR.NWU_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "NWU_GENERIC_SEQ", sequenceName = "SYSTEM.NWU_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "NWU_GENERIC_SEQ")
 
     @Column(name = "ACCOUNT_TYPE_ID")
-    public Long getAccountTypeId() {
+    public int getAccountTypeId() {
         return accountTypeId;
     }
 
@@ -60,14 +62,14 @@ public class AccountType implements Serializable {
         return creationDate;
     }
 
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType"/*, orphanRemoval = true, cascade = CascadeType.PERSIST*/)
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType")
     public Set<AccountTransaction> getAccountTransactions() {
         return accountTransactions;
     }
 
     public void setAccountTransactions(Set<AccountTransaction> accountTransactions) {this.accountTransactions = accountTransactions;}
 
-    public void setAccountTypeId(Long accountTypeId) {
+    public void setAccountTypeId(int accountTypeId) {
         this.accountTypeId = accountTypeId;
     }
 

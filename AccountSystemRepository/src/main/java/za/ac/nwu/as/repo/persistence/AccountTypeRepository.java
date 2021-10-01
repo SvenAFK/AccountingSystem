@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import za.ac.nwu.as.domain.dto.AccountTypeDto;
 import za.ac.nwu.as.domain.persistence.AccountType;
+import java.time.LocalDate;
 
 @Repository
 public interface AccountTypeRepository extends JpaRepository<AccountType, Long> {
@@ -15,18 +16,18 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
             "       CREATION_DATE, " +
             "       MNEMONIC" +
             "       FROM " +
-            "           VITRSA_SANDBOX.DEMO_ACCOUNT_TYPE "+
+            "           SVEN.ACCOUNT_TYPE "+
             "       WHERE MNEMONIC = :mnemonic ", nativeQuery = true)
     AccountType getAccountTypeByMnemonicNativeQuery(String mnemonic);
 
     @Query(value = "SELECT " +
             "       at" +
-            "   FROM " +
+            "       FROM " +
             "       AccountType at" +
-            "   WHERE   at.mnemonic = :mnemonic ")
+            "       WHERE   at.mnemonic = :mnemonic ")
     AccountType getAccountTypeByMnemonic(String mnemonic);
 
-    @Query(value = "SELECT new za.ac.nwu.as domain.dtoAccountTypeDto( " +
+    @Query(value = "SELECT new za.ac.nwu.as.domain.dto.AccountTypeDto( " +
             "       at.mnemonic, "  +
             "       at.accountTypeName, "   +
             "       at.creationDate )"  +
@@ -35,4 +36,16 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
             "       WHERE at.mnemonic = :mnemonic ")
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic);
 
+    @Query(value = "DELETE " +
+            "       FROM " +
+            "       SVEN.ACCOUNT_TYPE " +
+            "       WHERE MNEMONIC = :mnemonic", nativeQuery = true)
+    AccountType deleteAccountTypeByMnemonicNativeQuery(String mnemonic);
+
+    @Query(value = "UPDATE " +
+            "       SVEN.ACCOUNT_TYPE " +
+            "       SET ACCOUNT_TYPE_NAME = :newAccountTypeName," +
+            "       CREATION_DATE = :newCreationDate," +
+            "       WHERE MNEMONIC = :mnemonic", nativeQuery = true)
+    AccountType updateAccountTypeByMnemonicNativeQuery(String mnemonic, String newAccountTypeName, LocalDate newCreationDate);
 }

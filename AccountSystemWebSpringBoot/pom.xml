@@ -6,11 +6,10 @@
 
     <parent>
         <groupId>za.ac.nwu.as</groupId>
-        <artifactId>AccountingSystem</artifactId>
+        <artifactId>AccountSystem</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>za.ac.nwu.as</groupId>
     <artifactId>AccountSystemWebSpringBoot</artifactId>
     <version>war</version>
 
@@ -50,18 +49,6 @@
             <artifactId>springfox-spring-web</artifactId>
             <version>2.9.2</version>
         </dependency>
-        <dependency>
-            <groupId>za.ac.nwu.as</groupId>
-            <artifactId>AccountSystemLogic</artifactId>
-            <version>jar</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>za.ac.nwu.as</groupId>
-            <artifactId>AccountSystemDomain</artifactId>
-            <version>jar</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -70,8 +57,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
-
-
 </project>

@@ -6,13 +6,24 @@
 
     <parent>
         <groupId>za.ac.nwu.as</groupId>
-        <artifactId>AccountingSystem</artifactId>
+        <artifactId>AccountSystem</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>za.ac.nwu.as</groupId>
     <artifactId>AccountSystemWeb</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>za.ac.nwu.as</groupId>
+            <artifactId>AccountSystemDomain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>za.ac.nwu.as</groupId>
+            <artifactId>AccountSystemLogic</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     
 </project>
