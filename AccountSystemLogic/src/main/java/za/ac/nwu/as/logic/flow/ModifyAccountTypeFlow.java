@@ -5,9 +5,7 @@ import za.ac.nwu.as.domain.persistence.AccountType;
 import java.time.LocalDate;
 
 public interface ModifyAccountTypeFlow {
-    AccountTypeDto deleteAccountType(String mnemonic);
-
-    AccountTypeDto deleteAccountTypeByMnemonicNativeQuery(String mnemonic);
+    void deleteAccountType(String mnemonic);
 
     AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate);
 

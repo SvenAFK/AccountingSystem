@@ -20,7 +20,7 @@ public interface AccountTypeTranslator {
     AccountType getAccountTypeDbEntityByMnemonic(String accountTypeMnemonic);
 
     //Delete an AccountType
-    AccountTypeDto deleteAccountTypeByMnemonicNativeQuery(String mnemonic);
+    void deleteAccountTypeByMnemonic(String mnemonic);
 
     //Update an AccountType
     AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate);
