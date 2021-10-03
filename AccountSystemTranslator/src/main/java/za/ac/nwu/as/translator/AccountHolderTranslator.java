@@ -16,7 +16,7 @@ public interface AccountHolderTranslator {
     //Create AccountHolder (working)
     AccountHolderDto create(AccountHolderDto accountHolder);
 
-    AccountHolderDto updateAccountHolder(int memberId, String memberName, int newAccountBalance, String newAccountCurrency, LocalDate newAccountStartDate);
+    AccountHolderDto updateAccountHolder(String memberName, int newAccountBalance, String newAccountCurrency, LocalDate newAccountStartDate);
 
     AccountHolderDto addMiles(int memberId, int newAccountBalance);
 

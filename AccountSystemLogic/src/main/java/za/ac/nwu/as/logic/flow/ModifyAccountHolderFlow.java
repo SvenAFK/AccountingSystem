@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public interface ModifyAccountHolderFlow  {
     AccountHolderDto subtractMiles(int memberId, int balanced);
 
-    AccountHolderDto updateAccountHolder(int memberId, String memberName, int balance, String currency, LocalDate startDate);
+    AccountHolderDto updateAccountHolder(String memberName, int balance, String currency, LocalDate startDate);
 
     AccountHolderDto addMiles(int memberId, int balance);
 }

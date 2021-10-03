@@ -60,6 +60,7 @@ public class AccountTypeDto implements Serializable {
             value = "AccountType Creation Date",
             name = "CreationDate",
             notes = "This is the date on which the AccountType was created",
+            //dataType = "java.time.String",
             dataType = "java.time.LocalDate",
             example = "2020-01-01",
             allowEmptyValue = true)

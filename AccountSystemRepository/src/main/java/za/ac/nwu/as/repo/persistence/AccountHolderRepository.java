@@ -24,6 +24,13 @@ public interface AccountHolderRepository extends JpaRepository<AccountHolder, Lo
             "       WHERE MEMBER_ID = :memberId ", nativeQuery = true)
     AccountHolder getAccountHolderByIDNativeQuery(int memberId);
 
+    @Query(value = "SELECT " +
+            "       at" +
+            "       FROM " +
+            "       AccountHolder at" +
+            "       WHERE   at.memberName = :memberName ")
+    AccountHolder getAccountHolderByName(String memberName);
+
     @Query(value = "UPDATE " +
             "       SVEN.ACCOUNT_HOLDER " +
             "       SET BALANCE = :newAccountBalance," +
@@ -31,7 +38,7 @@ public interface AccountHolderRepository extends JpaRepository<AccountHolder, Lo
             "       MEMBER_NAME = :newAccountName," +
             "       START_DATE = :newAccountCreationDate" +
             "       WHERE MEMBER_ID = :memberId", nativeQuery = true)
-    AccountHolder updateAccountHolderByIDNativeQuery(int memberId, String newAccountCurrency, int newAccountBalance, String newAccountName, LocalDate newAccountCreationDate);
+    AccountHolder updateAccountHolderByIDNativeQuery(String newAccountCurrency, int newAccountBalance, String newAccountName, LocalDate newAccountCreationDate);
 
     @Query(value = "UPDATE " +
             "       SVEN.ACCOUNT_HOLDER " +

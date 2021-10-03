@@ -1,6 +1,7 @@
 package za.ac.nwu.as.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import za.ac.nwu.as.domain.persistence.AccountHolder;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import za.ac.nwu.as.domain.persistence.AccountTransactionDetails;
 import za.ac.nwu.as.domain.persistence.AccountType;
@@ -48,6 +49,7 @@ public class AccountTransactionDto implements Serializable {
         this.transactionDate = accountTransaction.getTransactionDate();
         if (null != accountTransaction.getDetails()) {
             this.details = accountTransaction.getDetails();
+            //this.details = new AccountTransactionDetailsDto(accountTransaction.getDetails());
         }
     }
 

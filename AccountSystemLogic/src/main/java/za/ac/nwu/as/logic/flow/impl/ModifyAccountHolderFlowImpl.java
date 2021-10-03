@@ -31,7 +31,7 @@ public class ModifyAccountHolderFlowImpl implements ModifyAccountHolderFlow {
     }
 
     @Override
-    public AccountHolderDto updateAccountHolder(int memberId, String memberName, int balance, String currency, LocalDate startDate) {
-        return translator.updateAccountHolder(memberId,memberName,balance,currency,startDate);
+    public AccountHolderDto updateAccountHolder(String memberName, int balance, String currency, LocalDate startDate) {
+        return translator.updateAccountHolder(memberName,balance,currency,startDate);
     }
 }

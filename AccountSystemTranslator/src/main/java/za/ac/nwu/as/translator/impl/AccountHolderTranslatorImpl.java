@@ -52,9 +52,16 @@ public class AccountHolderTranslatorImpl implements AccountHolderTranslator {
     }
 
     @Override
-    public AccountHolderDto updateAccountHolder(int memberId, String memberName, int newAccountBalance, String newAccountCurrency, LocalDate newAccountStartDate) {
+    public AccountHolderDto updateAccountHolder(String memberName, int newAccountBalance, String newAccountCurrency, LocalDate newAccountStartDate) {
         try {
-            AccountHolder accountHolder = repo.updateAccountHolderByIDNativeQuery(memberId, memberName, newAccountBalance, newAccountCurrency, newAccountStartDate);
+            AccountHolder accountHolder = repo.getAccountHolderByName(memberName);
+            //AccountHolder accountHolder = repo.updateAccountHolderByIDNativeQuery(memberName, newAccountCurrency,newAccountBalance,  newAccountStartDate);
+            accountHolder.setMemberName(memberName);
+            accountHolder.setBalance(newAccountBalance);
+            accountHolder.setCurrency(newAccountCurrency);
+            accountHolder.setStartDate(newAccountStartDate);
+            repo.save(accountHolder);
+
             return new AccountHolderDto(accountHolder);
         } catch (Exception e) {
             throw new RuntimeException("Unable to update the Database", e);
@@ -76,10 +83,12 @@ public class AccountHolderTranslatorImpl implements AccountHolderTranslator {
     @Override
     public AccountHolderDto subtractMiles(int memberId, int newAccountBalance) {
         try {
-            AccountHolder accountHolder = repo.subtractMilesByIDNativeQuery(memberId, newAccountBalance);
+            AccountHolder accountHolder = repo.getAccountHolderByIDNativeQuery(memberId);
+            accountHolder.setBalance(accountHolder.getBalance() - newAccountBalance);
+            repo.save(accountHolder);
             return new AccountHolderDto(accountHolder);
         } catch (Exception e) {
-            throw new RuntimeException("Unable to subtract currency the Database", e);
+            throw new RuntimeException("Unable to subtractMiles currency from Database", e);
         }
     }
 
