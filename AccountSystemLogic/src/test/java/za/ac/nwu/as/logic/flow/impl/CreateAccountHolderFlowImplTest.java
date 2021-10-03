@@ -34,7 +34,6 @@ public class CreateAccountHolderFlowImplTest {
 
     @Test
     public void create() {
-        // Write a test here
         when(translator.create(any(AccountHolderDto.class))).thenReturn(null);
         AccountHolderDto result = flow.create((new AccountHolderDto()));
         assertNull(result);

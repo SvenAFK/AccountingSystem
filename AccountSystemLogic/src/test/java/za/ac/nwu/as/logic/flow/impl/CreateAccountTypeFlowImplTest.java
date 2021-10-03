@@ -24,12 +24,12 @@ public class CreateAccountTypeFlowImplTest {
 
     @Before
     public void setUp() throws Exception {
-        // What happens before each test
+
     }
 
     @After
     public void tearDown() throws Exception {
-        // What happens after each test
+
     }
 
     @Test
