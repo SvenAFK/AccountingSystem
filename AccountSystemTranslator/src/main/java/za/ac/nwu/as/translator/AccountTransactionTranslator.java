@@ -12,8 +12,6 @@ public interface AccountTransactionTranslator {
 
     List<AccountTransactionDto> getAllAccountTransactions();
 
-    //AccountTransaction getAccountTransactionByPk(int transactionId);
-
     AccountTransactionDto create(AccountTransactionDto accountTransaction);
 
     AccountTransactionDto getAccountTransByIDNativeQuery(int transactionId);

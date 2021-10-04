@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64df6a55-f727-4d7d-81b4-96ba0e95ef67" name="Changes" comment="Commit_17">
+    <list default="true" id="64df6a55-f727-4d7d-81b4-96ba0e95ef67" name="Changes" comment="Commit_18">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemDomain/src/main/java/za/ac/nwu/as/domain/dto/AccountTransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemDomain/src/main/java/za/ac/nwu/as/domain/dto/AccountTransactionDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemDomain/src/main/java/za/ac/nwu/as/domain/dto/AccountTypeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemDomain/src/main/java/za/ac/nwu/as/domain/dto/AccountTypeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemLogic/src/main/java/za/ac/nwu/as/logic/flow/ModifyAccountHolderFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemLogic/src/main/java/za/ac/nwu/as/logic/flow/ModifyAccountHolderFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemLogic/src/main/java/za/ac/nwu/as/logic/flow/impl/ModifyAccountHolderFlowImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemLogic/src/main/java/za/ac/nwu/as/logic/flow/impl/ModifyAccountHolderFlowImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemRepository/src/main/java/za/ac/nwu/as/repo/persistence/AccountHolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemRepository/src/main/java/za/ac/nwu/as/repo/persistence/AccountHolderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountHolderTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountHolderTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/impl/AccountHolderTranslatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/impl/AccountHolderTranslatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/controller/AccountHolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/controller/AccountHolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountTransactionTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountTransactionTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountTypeTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemTranslator/src/main/java/za/ac/nwu/as/translator/AccountTypeTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/RestServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/RestServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/config/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccountSystemWebSpringBoot/src/main/java/za/ac/nwu/as/web/sb/config/SwaggerConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633277030067</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Commit_18">
+      <created>1633284415707</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1633284415707</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,6 +386,7 @@
     <MESSAGE value="Commit_15" />
     <MESSAGE value="Commit_16" />
     <MESSAGE value="Commit_17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit_17" />
+    <MESSAGE value="Commit_18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit_18" />
   </component>
 </project>
