@@ -60,14 +60,17 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         try {
             accountTypeRepository.delete(accountTypeRepository.getAccountTypeByMnemonicNativeQuery(mnemonic));
         } catch (Exception e) {
-            throw new RuntimeException("Unable to delete from the DB", e);
+            throw new RuntimeException("Unable to delete from the Database", e);
         }
     }
 
     @Override
     public AccountTypeDto updateAccountType(String mnemonic, String newAccountTypeName, LocalDate newCreationDate) {
         try {
-            AccountType accountType = accountTypeRepository.updateAccountTypeByMnemonicNativeQuery(mnemonic,newAccountTypeName,newCreationDate);
+            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonic(mnemonic);
+            accountType.setAccountTypeName(newAccountTypeName);
+            accountType.setCreationDate(newCreationDate);
+            accountTypeRepository.save(accountType);
             return new AccountTypeDto(accountType);
         } catch (Exception e) {
             throw new RuntimeException("Unable to update the Database", e);

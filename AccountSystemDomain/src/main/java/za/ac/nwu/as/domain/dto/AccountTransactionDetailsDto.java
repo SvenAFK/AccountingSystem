@@ -1,9 +1,9 @@
 package za.ac.nwu.as.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import za.ac.nwu.as.domain.persistence.AccountTransactionDetails;
-
 import java.util.Objects;
 
 public class AccountTransactionDetailsDto {
@@ -29,15 +29,29 @@ public class AccountTransactionDetailsDto {
         return new AccountTransactionDetails(accountTransaction, this.partnerName, this.numberOfItems);
     }
 
-    @JsonIgnore
+    //@JsonIgnore
     public AccountTransactionDetails buildAccountTransactionDetails() {
         return new AccountTransactionDetails(this.partnerName, this.numberOfItems);
     }
 
+    @ApiModelProperty(position = 1,
+            value = "AccountTransactionDetails PartnerName",
+            name = "PartnerName",
+            notes = "Uniquely identifies the account type",
+            dataType = "java.lang.String",
+            example = "ABC_Company",
+            required = true)
     public String getPartnerName() {
         return partnerName;
     }
 
+    @ApiModelProperty(position = 2,
+            value = "AccountTransactionDetails NumberOfItems",
+            name = "MemberId",
+            notes = "Uniquely identifies the account type",
+            dataType = "java.lang.Integer",
+            example = "12",
+            required = true)
     public void setPartnerName(String partnerName) {
         this.partnerName = partnerName;
     }
