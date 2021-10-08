@@ -2,9 +2,7 @@ package za.ac.nwu.as.domain.dto;
 
 import org.junit.Test;
 import za.ac.nwu.as.domain.persistence.AccountHolder;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
 
 public class AccountHolderDtoTest {
@@ -14,15 +12,6 @@ public class AccountHolderDtoTest {
         AccountHolderDto accountHolderDto = new AccountHolderDto();
         assertNull(accountHolderDto.getMemberName());
     }
-
-
-/*
-    @Test
-    public void getBalance() {
-        AccountHolderDto accountHolderDto = new AccountHolderDto();
-        assert(accountHolderDto.getBalance());
-    }
-    */
 
     @Test
     public void getCurrency() {
