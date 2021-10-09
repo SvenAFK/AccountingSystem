@@ -34,7 +34,6 @@ public class CreateAccountTypeFlowImplTest {
 
     @Test
     public void create() {
-        // Write a test here
         when(translator.create(any(AccountTypeDto.class))).thenReturn(null);
         AccountTypeDto result = flow.create((new AccountTypeDto()));
         assertNull(result);

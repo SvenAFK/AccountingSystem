@@ -10,10 +10,8 @@ public interface AccountHolderTranslator {
 
     AccountHolder save(AccountHolder accountHolder);
 
-    //Get all the AccountHolders (working)
     List<AccountHolder> getAllAccountHolders();
 
-    //Create AccountHolder (working)
     AccountHolderDto create(AccountHolderDto accountHolder);
 
     AccountHolderDto updateAccountHolder(String memberName, int newAccountBalance, String newAccountCurrency, LocalDate newAccountStartDate);
@@ -22,7 +20,6 @@ public interface AccountHolderTranslator {
 
     AccountHolderDto subtractMiles(int memberId, int newAccountBalance);
 
-    //Get AccountHolder by ID (working)
     AccountHolderDto getAccountHolderByIDNativeQuery(int memberId);
 
 }
