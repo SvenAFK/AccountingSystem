@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import za.ac.nwu.as.domain.persistence.AccountType;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;

@@ -1,7 +1,5 @@
 package za.ac.nwu.as.domain.persistence;
 
-import za.ac.nwu.as.domain.dto.AccountHolderDto;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;

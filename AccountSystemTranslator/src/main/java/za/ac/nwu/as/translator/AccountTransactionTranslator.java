@@ -1,8 +1,6 @@
 package za.ac.nwu.as.translator;
 
-import za.ac.nwu.as.domain.dto.AccountHolderDto;
 import za.ac.nwu.as.domain.dto.AccountTransactionDto;
-import za.ac.nwu.as.domain.persistence.AccountHolder;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import java.util.List;
 

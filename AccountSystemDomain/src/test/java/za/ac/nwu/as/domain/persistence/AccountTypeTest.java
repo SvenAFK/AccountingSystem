@@ -1,13 +1,10 @@
 package za.ac.nwu.as.domain.persistence;
 
 import org.junit.Test;
-import za.ac.nwu.as.domain.dto.AccountTypeDto;
-
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
-
 import static org.junit.Assert.*;
 
 public class AccountTypeTest {

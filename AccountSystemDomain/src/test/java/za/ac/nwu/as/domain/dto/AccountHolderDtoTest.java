@@ -56,7 +56,6 @@ public class AccountHolderDtoTest {
 
     @Test
     public void AccountHolder() {
-        //Test additional methods
         AccountHolder accountHolder = new AccountHolder();
         AccountHolderDto accountHolderDto01 = new AccountHolderDto("memberName",1500,"MILES,",LocalDate.now());
         AccountHolderDto accountHolderDto02 = new AccountHolderDto(accountHolder);

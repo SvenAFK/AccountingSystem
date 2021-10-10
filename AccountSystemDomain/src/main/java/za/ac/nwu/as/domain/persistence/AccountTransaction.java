@@ -38,7 +38,6 @@ public class AccountTransaction implements Serializable {
         return transactionId;
     }
 
-    //@ManyToOne(fetch = FetchType.LAZY)
     @Column(name = "MEMBER_ID")
     public int getMemberId() {
         return memberId;

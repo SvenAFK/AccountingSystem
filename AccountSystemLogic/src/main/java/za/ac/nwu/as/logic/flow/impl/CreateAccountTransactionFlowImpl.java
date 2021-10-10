@@ -59,7 +59,6 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
             accountTransactionDetailsTranslator.save(accountTransactionDetails);
         }
         AccountTransactionDto results = new AccountTransactionDto(createdAccountTransaction);
-        //LOGGER.info("The return object is {}", results);
         LOGGER.warn("The return object is {}", results);
         return results;
     }

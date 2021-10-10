@@ -1,7 +1,6 @@
 package za.ac.nwu.as.domain.persistence;
 
 import org.junit.Test;
-import za.ac.nwu.as.domain.dto.AccountTransactionDetailsDto;
 
 import static org.junit.Assert.*;
 

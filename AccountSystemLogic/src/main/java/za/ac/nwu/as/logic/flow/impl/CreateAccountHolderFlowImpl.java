@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import za.ac.nwu.as.domain.dto.AccountHolderDto;
 import za.ac.nwu.as.logic.flow.CreateAccountHolderFlow;
 import za.ac.nwu.as.translator.AccountHolderTranslator;
-
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 
@@ -23,7 +22,6 @@ public class CreateAccountHolderFlowImpl implements CreateAccountHolderFlow {
         if (null == accountHolder.getStartDate()){
             accountHolder.setStartDate(LocalDate.now());
         }
-        //accountHolderTranslator.create(accountHolder);
         return accountHolderTranslator.create(accountHolder);
     }
 }

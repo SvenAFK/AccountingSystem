@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import za.ac.nwu.as.domain.dto.AccountHolderDto;
 import za.ac.nwu.as.logic.flow.ModifyAccountHolderFlow;
 import za.ac.nwu.as.translator.AccountHolderTranslator;
-
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 

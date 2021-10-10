@@ -15,7 +15,7 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
             "       AMOUNT, " +
             "       TX_DATE" +
             "       FROM " +
-            "           SVEN.ACCOUNT_TX "+
+            "       SVEN.ACCOUNT_TX "+
             "       WHERE ACCOUNT_TX_ID = :transactionId ", nativeQuery = true)
     AccountTransaction getAccountTransByIDNativeQuery(int transactionId);
 

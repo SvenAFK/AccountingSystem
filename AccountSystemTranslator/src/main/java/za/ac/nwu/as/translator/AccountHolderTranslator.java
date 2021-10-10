@@ -1,7 +1,6 @@
 package za.ac.nwu.as.translator;
 
 import za.ac.nwu.as.domain.dto.AccountHolderDto;
-import za.ac.nwu.as.domain.dto.AccountTypeDto;
 import za.ac.nwu.as.domain.persistence.AccountHolder;
 import java.time.LocalDate;
 import java.util.List;

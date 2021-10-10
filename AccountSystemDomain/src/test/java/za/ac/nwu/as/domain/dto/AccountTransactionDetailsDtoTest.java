@@ -3,7 +3,6 @@ package za.ac.nwu.as.domain.dto;
 import org.junit.Test;
 import za.ac.nwu.as.domain.persistence.AccountTransaction;
 import za.ac.nwu.as.domain.persistence.AccountTransactionDetails;
-
 import static org.junit.Assert.*;
 
 public class AccountTransactionDetailsDtoTest {

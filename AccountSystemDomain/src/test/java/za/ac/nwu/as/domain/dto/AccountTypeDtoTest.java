@@ -2,9 +2,7 @@ package za.ac.nwu.as.domain.dto;
 
 import org.junit.Test;
 import za.ac.nwu.as.domain.persistence.AccountType;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
 
 public class AccountTypeDtoTest {

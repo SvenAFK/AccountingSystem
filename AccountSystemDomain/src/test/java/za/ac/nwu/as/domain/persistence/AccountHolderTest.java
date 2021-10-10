@@ -1,10 +1,7 @@
 package za.ac.nwu.as.domain.persistence;
 
 import org.junit.Test;
-import za.ac.nwu.as.domain.dto.AccountHolderDto;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
 
 public class AccountHolderTest {
@@ -72,7 +69,6 @@ public class AccountHolderTest {
 
     @Test
     public void AccountHolder() {
-        //Test additional methods
         AccountHolder accountHolder01 = new AccountHolder("memberName",1200,"currency",LocalDate.now());
         AccountHolder accountHolder02 = new AccountHolder(123,"memberName",1200,"currency",LocalDate.now());
         accountHolder01.toString();

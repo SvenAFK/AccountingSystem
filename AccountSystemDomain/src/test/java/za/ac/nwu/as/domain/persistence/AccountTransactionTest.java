@@ -1,10 +1,7 @@
 package za.ac.nwu.as.domain.persistence;
 
 import org.junit.Test;
-import za.ac.nwu.as.domain.dto.AccountTransactionDto;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
 
 public class AccountTransactionTest {
